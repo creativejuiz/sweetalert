@@ -1,7 +1,7 @@
 var injectedHTML = 
 
   // Dark overlay
-  `<div class="sweet-overlay" tabIndex="-1"></div>` +
+  `<div class="sweet-overlay" tabindex="-1"></div>` +
 
   // Modal
   `<div class="sweet-alert">` +
@@ -38,7 +38,7 @@ var injectedHTML =
     `<h2>Title</h2>
     <p>Text</p>
     <fieldset>
-      <input type="text" tabIndex="3" />
+      <input type="text" tabindex="3" class="swal-default-input" />
       <div class="sa-input-error"></div>
     </fieldset>` +
 
@@ -50,9 +50,9 @@ var injectedHTML =
 
     // Cancel and confirm buttons
     `<div class="sa-button-container">
-      <button class="cancel" tabIndex="2">Cancel</button>
+      <button class="cancel" tabindex="2">Cancel</button>
       <div class="sa-confirm-button-container">
-        <button class="confirm" tabIndex="1">OK</button>` + 
+        <button class="confirm" tabindex="1">OK</button>` + 
 
         // Loading animation
         `<div class="la-ball-fall">
