@@ -60,8 +60,7 @@ body.stop-scrolling {
     margin: 0;
     padding: 0;
     line-height: normal; }
-  .sweet-alert fieldset {
-    border: none;
+  .sweet-alert .swal-form-container {
     position: relative; }
   .sweet-alert .sa-error-container {
     background-color: #f1f1f1;

@@ -37,10 +37,10 @@ var injectedHTML =
     // Title, text and input
     `<h2>Title</h2>
     <p>Text</p>
-    <fieldset>
+    <div class="swal-form-container">
       <input type="text" tabindex="3" class="swal-default-input" />
       <div class="sa-input-error"></div>
-    </fieldset>` +
+    </div>` +
 
     // Input errors
     `<div class="sa-error-container">
