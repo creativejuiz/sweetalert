@@ -169,6 +169,8 @@ export default sweetAlert = swal = function() {
   
   // Show alert with enabled buttons always
   swal.enableButtons();
+
+  return modal;
 };
 
 
