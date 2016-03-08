@@ -42,6 +42,9 @@ var setParameters = function(params) {
   /*
    * Custom class
    */
+  if (params.html && params.allowCustomInput) {
+    params.customClass += ' show-custom-input';
+  }
   if (params.customClass) {
     addClass(modal, params.customClass);
     modal.setAttribute('data-custom-class', params.customClass);

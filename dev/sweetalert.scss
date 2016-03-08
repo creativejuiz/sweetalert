@@ -197,8 +197,15 @@ body.stop-scrolling {
       color: lighten(#575757, 40);
     }
   }
-  &.show-input input {
+  &.show-input .swal-default-input,
+  &.show-custom-input.show-input .swal-default-input {
     display: block;
+  }
+  &.show-custom-input input {
+    display: block;
+  }
+  &.show-custom-input .swal-default-input {
+    display: none;
   }
 
   .sa-confirm-button-container {
