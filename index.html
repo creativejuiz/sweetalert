@@ -218,6 +218,30 @@
 			&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"themes/twitter.css"</span>&gt;</pre>
 	</li>
 
+	<li class="custominput">
+		<div class="ui">
+			<p>Or use a custom form!</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="tag">var</span> <span class="attr">customForm</span> = <span class="str">'&lt;fieldset&gt;&lt;legend&gt;Custom fields&lt;/legend&gt;'</span> +
+  	<span class="str">'&lt;p&gt;&lt;input type="text" value="" name="custom-input-1"&gt;&lt;/p&gt;'</span> +
+  	<span class="str">'&lt;p&gt;&lt;input type="text" value="" name="custom-input-2"&gt;&lt;/p&gt;'</span> +
+  	<span class="str">'&lt;/fieldset&gt;'</span>;
+
+		<span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"Custom form example"</span>,
+&nbsp;&nbsp;text: <span class="str">"A custom form to do what you need." + customForm</span>,
+&nbsp;&nbsp;type: <span class="str">"info"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;showLoaderOnConfirm: <span class="val">true</span>,
+&nbsp;&nbsp;html: <span class="val">true</span>,
+&nbsp;&nbsp;allowCustomInput: <span class="val">true</span>,
+},
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;// something todo
+});</pre>
+	</li>
 </ul>
 
 
@@ -236,7 +260,7 @@
 
 <p class="center"><b>Method 3:</b> Download the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
 
-<a class="button" href="https://github.com/t4t5/sweetalert/archive/master.zip" download>Download files</a>
+<a class="button" href="https://github.com/creativejuiz/sweetalert/archive/master.zip" download>Download files</a>
 
 <ol>
 	<li>
@@ -572,6 +596,27 @@ document.querySelector('ul.examples li.ajax button').onclick = function() {
     setTimeout(function() {
       swal('Ajax request finished!');
     }, 2000);
+  });
+};
+
+document.querySelector('ul.examples li.custominput button').onclick = function() {
+  
+  var customForm = '<fieldset><legend>Custom fields</legend>' +
+  	'<p><input type="text" value="" name="custom-input-1"></p>' +
+  	'<p><input type="text" value="" name="custom-input-2"></p>' +
+  	'</fieldset>';
+
+  swal({
+    title: 'Custom form example',
+    text: 'A custom form to do what you need.' + customForm,
+    type: 'info',
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true,
+    html: true,
+    allowCustomInput: true
+  }, function(){
+    // should return serializedDatas
   });
 };
 
