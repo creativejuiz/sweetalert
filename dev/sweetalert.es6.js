@@ -170,7 +170,7 @@ export default sweetAlert = swal = function() {
   // Show alert with enabled buttons always
   swal.enableButtons();
 
-  return modal;
+  return { 'modal': modal, 'swal': swal };
 };
 
 
@@ -302,6 +302,36 @@ sweetAlert.enableButtons = swal.enableButtons = function(event) {
   var $cancelButton = modal.querySelector('button.cancel');
   $confirmButton.disabled = false;
   $cancelButton.disabled = false;
+};
+
+/*
+ * Objectify custom datas 
+ */
+sweetAlert.getDatas = swal.getDatas = function(event) {
+  var modal = getModal(),
+      datas = {},
+      inputs = modal.querySelectorAll('input');
+
+  Array.prototype.forEach.call(inputs, function(item) {
+    if ( item.id ) {
+
+      // build the object item
+      datas[ item.id ]= {
+        id: item.id,
+        type: item.type,
+        value: item.value
+      };
+
+      // look for data- attributes
+      if ( item.dataset ) {
+        datas[ item.id ].data = item.dataset;
+      }
+
+    }
+
+  });
+
+  return datas;
 };
 
 if (typeof window !== 'undefined') {

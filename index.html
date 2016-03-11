@@ -602,21 +602,23 @@ document.querySelector('ul.examples li.ajax button').onclick = function() {
 document.querySelector('ul.examples li.custominput button').onclick = function() {
   
   var customForm = '<fieldset><legend>Custom fields</legend>' +
-  	'<p><input type="text" value="" name="custom-input-1"></p>' +
-  	'<p><input type="text" value="" name="custom-input-2"></p>' +
+  	'<p><input type="text" data-attr1="val1" data-attr2="val2" value="" name="custom-input-1" id="input-1"></p>' +
+  	'<p><input type="text" value="" name="custom-input-2" id="input-2"></p>' +
   	'</fieldset>';
 
-  swal({
+  var modal = swal({
     title: 'Custom form example',
-    text: 'A custom form to do what you need.' + customForm,
+    text: customForm,
     type: 'info',
     showCancelButton: true,
     closeOnConfirm: false,
     showLoaderOnConfirm: true,
     html: true,
     allowCustomInput: true
-  }, function(){
-    // should return serializedDatas
+  }, function(clicked){
+  	var datas = modal.swal.getDatas();
+  	console.log( datas );
+    console.log( 'Test of data-attribute:', datas['input-1'].data.attr1 );
   });
 };
 
